@@ -1,0 +1,94 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+    <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
+    <title>Login</title>
+</head>
+
+<body>
+    {% block content %}
+    <header>
+        <div class="container-fluid">
+            <div class="row pt-3">
+                <div class="col-2"></div>
+                <div class="col-1">
+                </div>
+                <div class="col-6 d-lg-flex justify-content-evenly">
+                    <a href="index.html">Welcome</a>
+                    <a href="store.html">Store</a>
+                    <a href="Course.html">Course</a>
+                    <a href="{% url 'register' %}">Sign up</a>
+                    <a href="{% url 'login' %}">Sign In</a>
+                    <a href="{% url 'profile' %}">Profile</a>
+                </div>
+                <div class="col-2 d-lg-flex justify-content-evenly pt-2">
+                    <a href="https://www.instagram.com/instagram/?hl=en" class="fa-brands fa-instagram"></a>
+                    <a href="https://www.instagram.com/instagram/?hl=en" class="fa-brands fa-facebook"></a>
+                    <a href="https://www.instagram.com/instagram/?hl=en" class="fa-brands fa-twitter"></a>
+                    <a href="https://www.instagram.com/instagram/?hl=en" class="fa-brands fa-skype"></a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="home">
+        <img decoding="async" class="img-slide active" src="../assets/login-slider/5040007.jpg"></img>
+        <img decoding="async" class="img-slide" src="../assets/login-slider/5072310.jpg"></img>
+        <div class="content active">
+            <h1>Login,<br><span>Dear</span></h1>
+            <p>Logging in is quick and easy. Just enter your username and password, and you'll be back on your way to an
+                active, fulfilling lifestyle.</p>
+            <a href="#" id="firstButton">Let's start</a>
+        </div>
+        <div class="content">
+            <h1>Login</h1>
+            <p>Your journey is important to us, and we're here to support you every step of the way. Let's continue this
+                adventure together. Welcome back to our project</p>
+            <a href="#login">Read More</a>
+        </div>
+        <div class="slider-navigation">
+            <div class="nav-btn active"></div>
+            <div class="nav-btn"></div>
+        </div>
+    </section>
+    <section id="login">
+        <div class="container-fluid login-container">
+            <h2 class="text-center">Login to Your Account</h2>
+            <form id="login-form" onsubmit="return validateForm()">
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" class="form-control" id="username" name="username" required>
+                    <div id="username-error" class="error-message"></div>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                    <div id="email-error" class="error-message"></div>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" name="password" required>
+                    <div id="password-error" class="error-message"></div>
+                </div>
+                <button type="submit" class="btn btn-primary" id="login-button">Login</button>
+            </form>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/b68baa7942.js" crossorigin="anonymous"></script>
+    {% endblock %}
+    <script src="{% static 'loginscript1.js' %}"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,7 @@
+body {
+    font-family: Arial;
+    background-image: url("../assets/images/back.jpg");
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+}
